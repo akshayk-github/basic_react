@@ -46,26 +46,63 @@ function App() {
         }
     ];
 
-
-
     // medicine.map((value, index) => console.log(value.id, value.name));
 
     let filterdata = medicine.filter((d, i) => d.expiry >= 2022);
 
-    let ans = filterdata.reduce((acc, d, i) => acc + d.price, 0);
+    // let ans = filterdata.reduce((acc, d, i) => acc + d.price, 0);
 
-    // let ans = medicine.reduce((acc, d, i) => acc + d.price, 0);
+    let ans = medicine.reduce((acc, d, i) => acc + d.price, 0);
     // console.log(ans);
+
+
+
+
+    let arr = [10,20,30,40,50];
+
+    // copy
+    let arr1 = [...arr];
+    console.log(arr1);
+
+    // merge
+    let arr2 = [99, ...arr, 60];
+    console.log(arr2);
+
+    // destructure
+    let [maths, eng, sci, guj, ss] = arr;
+    console.log(ss);
+
+
+    // copy
+    let obj ={
+        id: 101,
+        name: 'akshay'
+    };
+    let obj1 = {...obj};
+    console.log(obj1);
+
+    // merge
+    let obj2 = {
+        ...obj,
+        place: 'surat'
+    };
+    console.log(obj2);
+
+    // destructure
+    let {id, name} = obj;
+    console.log(id, name);
+
 
     return (
         <>
-            <table>
-                <th>
-                    <td>Id</td>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>Expiry</td>
-                </th>
+            <table border="1">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Expiry</th>
+                    <th>total</th>
+                </tr>
                 {
                     filterdata.map((value, index) => {
                         return (
@@ -74,6 +111,7 @@ function App() {
                                 <td>{value.name}</td>
                                 <td>{value.price}</td>
                                 <td>{value.expiry}</td>
+                                { index ===  0? <td rowspan = {medicine.length}>{ans}</td> :null }
                             </tr>
                         )
                     })
