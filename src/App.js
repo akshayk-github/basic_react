@@ -6,6 +6,7 @@ import Conuntry_fun from './container/Conuntry_fun';
 import City_fun from './container/City_fun';
 import Branch from './container/Branch';
 import Time from './container/Time/Time';
+import TimeFun from './container/Time/TimeFun';
 
 function App() {
  
@@ -18,7 +19,8 @@ function App() {
             <Conuntry_fun/>
             <City_fun/> 
             <Branch/> */}
-            <Time/>
+            {/* <Time/> */}
+            <TimeFun/>
         </>
     );
 }
