@@ -10,6 +10,7 @@ import TimeFun from './container/Time/TimeFun';
 import { useEffect, useState } from 'react';
 import Loading from './components/Loading/Loading';
 import Home from './container/home/Home';
+import Count from './container/Count';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
             {/* <Branch/> */}
             {/* <Time/> */}
             {/* <TimeFun/> */}
+            <Count/>
 
             <Loadingwithhome
                 isloading = {loading}
